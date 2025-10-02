@@ -26,7 +26,7 @@ def api_gateway_compatible(full_path):
     ''' A Flask path compatible with Amazon AWS API Gateway HTTP API, with payload format v2.0 (https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html).
     '''
     event = {
-        'headers': dict(request.headers),
+        'headers': request.headers,
         'isBase64Encoded': False,
         'pathParameters': request.view_args,
         'queryStringParameters': request.args,
